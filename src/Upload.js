@@ -41,9 +41,9 @@ async function uploadData(data) {
         ])
         .select();
 
-      alert("DONE");
+      alert("your data successfully fetched🎉");
     } catch (err) {
-      alert(err.name);
+      alert("Something Went Wrong🌋");
       return;
     }
   }
