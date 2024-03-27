@@ -43,6 +43,15 @@ async function uploadData(data, objSet) {
 
       alert("🎉 your data successfully fetched 🎉");
       objSet.setAge(18);
+      objSet.setFirstName("");
+      objSet.setLastName("");
+      objSet.setMobile(0);
+      objSet.setEmail("");
+      objSet.setGender("Male");
+      objSet.setCity("");
+      objSet.setAlternateMobile(0);
+      objSet.setPin(0);
+      objSet.setAadhar("");
     } catch (err) {
       alert("🌋 Something Went Wrong🌋");
       return;
