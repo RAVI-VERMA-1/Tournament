@@ -1,6 +1,6 @@
 import supabase from "./supabase";
 
-async function uploadData(data) {
+async function uploadData(data, objSet) {
   //   console.log("Hello " + data);
 
   let email1 = await supabase
@@ -42,6 +42,7 @@ async function uploadData(data) {
         .select();
 
       alert("🎉 your data successfully fetched 🎉");
+      objSet.setAge(18);
     } catch (err) {
       alert("🌋 Something Went Wrong🌋");
       return;

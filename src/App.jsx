@@ -94,7 +94,21 @@ function App() {
   const [gender, setGender] = useState("Male");
   const [age, setAge] = useState(18);
   const [aadhar, setAadhar] = useState("");
-
+  const objSet = {
+    setAadhar,
+    setAge,
+    setGender,
+    setEvent,
+    setDistrict,
+    setPin,
+    setCity,
+    setState,
+    setEmail,
+    setAlternateMobile,
+    setMobile,
+    setLastName,
+    setFirstName,
+  };
   let data = {};
 
   function handleSubmit(e) {
@@ -127,7 +141,7 @@ function App() {
         data.firstName !== "" &&
         data.lastName !== ""
       ) {
-        uploadData(data);
+        uploadData(data, objSet);
       } else {
         alert("😟 Make sure you insert all the required data !!!!😟");
         return;
