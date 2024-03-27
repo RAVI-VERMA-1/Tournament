@@ -29,11 +29,11 @@ export default function useDataFun() {
           console.log(data);
         } catch (err) {
           if (err.name !== "AbortError") {
-            console.log(err.message);
+            // console.log(err.message);
             //   setError(err.message);
           }
         } finally {
-          console.log("OK");
+          // console.log("OK");
         }
       }
     },

@@ -94,7 +94,6 @@ function App() {
   const [gender, setGender] = useState("Male");
   const [age, setAge] = useState(18);
   const [aadhar, setAadhar] = useState("");
-  console.log(FirstName);
 
   let data = {};
 

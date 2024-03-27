@@ -1,7 +1,7 @@
 import supabase from "./supabase";
 
 async function uploadData(data) {
-  console.log("Hello " + data);
+  //   console.log("Hello " + data);
 
   let email1 = await supabase
     .from("participants")
@@ -13,7 +13,7 @@ async function uploadData(data) {
     .select("mobile")
     .eq("mobile", data?.mobile);
 
-  console.log(email1);
+  //   console.log(email1);
   if (email1?.data?.length == 1 || mobile1?.data?.length == 1) {
     alert("😊 User already exists 👨‍💻!!!");
     return;
