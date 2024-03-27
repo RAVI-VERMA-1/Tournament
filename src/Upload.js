@@ -1,5 +1,6 @@
 import supabase from "./supabase";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 async function uploadData(data, objSet) {
   //   console.log("Hello " + data);
 
@@ -15,7 +16,10 @@ async function uploadData(data, objSet) {
 
   //   console.log(email1);
   if (email1?.data?.length == 1 || mobile1?.data?.length == 1) {
-    alert("😊 User already exists 👨‍💻!!!");
+    toast.error("User Already Exists with this Mobile/Email 😊", {
+      position: "top-center",
+      theme: "colored",
+    });
     return;
   } else {
     try {
@@ -41,7 +45,10 @@ async function uploadData(data, objSet) {
         ])
         .select();
 
-      alert("🎉 your data successfully fetched 🎉");
+      toast.success("Your data saved successfully🎉✌️", {
+        position: "top-center",
+        theme: "colored",
+      });
       objSet.setAge(18);
       objSet.setFirstName("");
       objSet.setLastName("");
@@ -53,7 +60,10 @@ async function uploadData(data, objSet) {
       objSet.setPin(0);
       objSet.setAadhar("");
     } catch (err) {
-      alert("🌋 Something Went Wrong🌋");
+      toast.error("Something went wrong🌋", {
+        position: "top-center",
+        theme: "colored",
+      });
       return;
     }
   }

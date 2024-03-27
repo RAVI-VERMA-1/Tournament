@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import "./App.css";
+import { ErrorBoundary } from "react-error-boundary";
 // import useDataFun from "./useData";
 import uploadData from "./Upload";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Input = styled.input`
   font-weight: 600;
@@ -79,8 +82,10 @@ const Button = styled.button`
   border-radius: 4px;
   background-color: lightblue;
 `;
+
 function App() {
   // useEffect(function () {}, []);
+
   const [FirstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");
   const [mobile, setMobile] = useState(0);
@@ -130,10 +135,17 @@ function App() {
     // console.log(data);
 
     if (data.mobile.length != 10) {
-      alert("😬 Insert Valid Mobile Number 😬!!!!");
+      // alert("😬 Insert Valid Mobile Number 😬!!!!");
+      toast.error("Insert Valid Mobile Number", {
+        position: "top-center",
+        theme: "colored",
+      });
       return;
     } else if (data.firstName.length <= 1) {
-      alert("😬 Insert Valid First Name, Name's length must be 2 😬!!!!");
+      toast.warn("Insert Valid First name", {
+        position: "top-center",
+        theme: "colored",
+      });
     } else {
       if (
         data.mobile !== "" &&
@@ -143,7 +155,10 @@ function App() {
       ) {
         uploadData(data, objSet);
       } else {
-        alert("😟 Make sure you insert all the required data !!!!😟");
+        toast.error("fill All required fields 👨‍💻", {
+          position: "top-center",
+          theme: "colored",
+        });
         return;
       }
     }
@@ -295,6 +310,20 @@ function App() {
         </Form>
 
         <Article>Payment Aggregator</Article>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+
+        <ToastContainer />
       </Main>
     </div>
   );
