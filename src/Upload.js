@@ -15,7 +15,7 @@ async function uploadData(data) {
 
   console.log(email1);
   if (email1?.data?.length == 1 || mobile1?.data?.length == 1) {
-    alert("User already exists!!!");
+    alert("😊 User already exists 👨‍💻!!!");
     return;
   } else {
     try {
@@ -41,9 +41,9 @@ async function uploadData(data) {
         ])
         .select();
 
-      alert("your data successfully fetched🎉");
+      alert("🎉 your data successfully fetched 🎉");
     } catch (err) {
-      alert("Something Went Wrong🌋");
+      alert("🌋 Something Went Wrong🌋");
       return;
     }
   }

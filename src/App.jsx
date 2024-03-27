@@ -117,10 +117,10 @@ function App() {
     // console.log(data);
 
     if (data.mobile.length != 10) {
-      alert("Insert Valid Mobile Number !!!!");
+      alert("😬 Insert Valid Mobile Number 😬!!!!");
       return;
     } else if (data.firstName.length <= 1) {
-      alert("Insert Valid First Name !!!!");
+      alert("😬 Insert Valid First Name, Name's length must be 2 😬!!!!");
     } else {
       if (
         data.mobile !== "" &&
@@ -130,7 +130,7 @@ function App() {
       ) {
         uploadData(data);
       } else {
-        alert("Make sure you insert all the required data !!!!");
+        alert("😟 Make sure you insert all the required data !!!!😟");
         return;
       }
     }
