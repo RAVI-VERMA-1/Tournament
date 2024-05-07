@@ -16,28 +16,28 @@ const Input = styled.input`
   margin-right: 10px;
   color: var(--color-input-00);
 `;
-const Article = styled.article`
-  display: flex;
-  justify-content: center;
-  /* border: 2px solid; */
-  padding: 14px 0px;
-  margin: 50px 0px;
-  /* border-radius: 20px; */
-`;
+// const Article = styled.article`
+//   display: flex;
+//   justify-content: center;
+//   /* border: 2px solid; */
+//   padding: 14px 0px;
+//   margin: 50px 0px;
+//   /* border-radius: 20px; */
+// `;
 const Form = styled.form`
   display: flex;
   justify-content: center;
-  border: 2px solid;
-  padding: 14px 0px;
-  margin: 20px 0px;
-  border-radius: 20px;
+  border: 2px solid #5ab2ed;
+  align-items: center;
+  border-radius: 1.5%;
+  padding: 50px 100px;
   /* background-color: black; */
 `;
 
 const Main = styled.main`
-  display: grid;
-  grid-template-columns: 1fr 500px;
+  display: flex;
   padding: 20px 40px;
+  justify-content: center;
 `;
 const FormRow = styled.div`
   display: grid;
@@ -166,11 +166,9 @@ function App() {
 
   return (
     <div className="w-full  bg-stone-50">
-      <p className="text-5xl text-blue-500 font-bold font-mono">
-        Tournament XYZ
-      </p>
+      <p className="text-5xl text-blue-500 font-bold font-mono">Form Page</p>
       <Main>
-        <Form className="flex flex-col border-black-solid gap-1">
+        <Form className="flex flex-col  border-black-solid gap-1">
           <FormRow>
             <Label>First Name : </Label>
             <Input
@@ -309,7 +307,6 @@ function App() {
           </Button>
         </Form>
 
-        <Article>Payment Aggregator</Article>
         <ToastContainer
           position="top-right"
           autoClose={5000}
